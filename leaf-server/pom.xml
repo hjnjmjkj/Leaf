@@ -14,7 +14,9 @@
     <name>leaf-server</name>
     <description>Leaf HTTP Server</description>
     <properties>
-        <spring-boot-dependencies.version>1.5.18.RELEASE</spring-boot-dependencies.version>
+        <spring-boot-dependencies.version>2.1.5.RELEASE</spring-boot-dependencies.version>
+        <dubbo.group>org.apache.dubbo</dubbo.group>
+        <dubbo.version>2.7.2</dubbo.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -48,6 +50,10 @@
             <artifactId>leaf-core</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.sankuai.inf.leaf</groupId>
+            <artifactId>leaf-spi</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
         </dependency>
@@ -61,6 +67,56 @@
                     <groupId>log4j</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>${dubbo.group}</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>2.7.1</version>
+        </dependency>
+        <!--<dependency>
+            <groupId>com.alibaba.spring.boot</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>2.0.0</version>
+        </dependency>-->
+        <dependency>
+            <groupId>${dubbo.group}</groupId>
+            <artifactId>dubbo-registry-nacos</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${dubbo.group}</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${dubbo.group}</groupId>
+            <artifactId>dubbo-config-spring</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${dubbo.group}</groupId>
+            <artifactId>dubbo-config-api</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${dubbo.group}</groupId>
+            <artifactId>dubbo-config-spring</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>0.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.spring</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

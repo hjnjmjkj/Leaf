@@ -1,5 +1,6 @@
 package com.sankuai.inf.leaf.server;
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import com.sankuai.inf.leaf.IDGen;
 import com.sankuai.inf.leaf.common.PropertyFactory;
 import com.sankuai.inf.leaf.common.Result;
@@ -16,13 +17,16 @@ import java.util.Properties;
 public class SnowflakeService {
     private Logger logger = LoggerFactory.getLogger(SnowflakeService.class);
     IDGen idGen;
+    @NacosValue(value = "${leaf.snowflake.enable}:false", autoRefreshed = true)
+    private String flag;
+    @NacosValue(value = "${leaf.snowflake.zk.address}", autoRefreshed = true)
+    private String zkAddress;
+    @NacosValue(value = "${leaf.snowflake.port}", autoRefreshed = true)
+    private String port;
     public SnowflakeService() throws InitException {
         Properties properties = PropertyFactory.getProperties();
-        boolean flag = Boolean.parseBoolean(properties.getProperty(Constants.LEAF_SNOWFLAKE_ENABLE, "true"));
-        if (flag) {
-            String zkAddress = properties.getProperty(Constants.LEAF_SNOWFLAKE_ZK_ADDRESS);
-            int port = Integer.parseInt(properties.getProperty(Constants.LEAF_SNOWFLAKE_PORT));
-            idGen = new SnowflakeIDGenImpl(zkAddress, port);
+        if (Boolean.parseBoolean(flag)) {
+            idGen = new SnowflakeIDGenImpl(zkAddress, Integer.parseInt(port));
             if(idGen.init()) {
                 logger.info("Snowflake Service Init Successfully");
             } else {

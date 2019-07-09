@@ -10,6 +10,7 @@
     <modules>
         <module>leaf-core</module>
         <module>leaf-server</module>
+        <module>leaf-spi</module>
     </modules>
     <description>Distributed ID Generate Service</description>
     <developers>
@@ -58,6 +59,11 @@
                 <version>1.0.1</version>
             </dependency>
             <dependency>
+                <groupId>com.sankuai.inf.leaf</groupId>
+                <artifactId>leaf-spi</artifactId>
+                <version>1.0.1</version>
+            </dependency>
+            <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${druid.version}</version>
@@ -96,31 +102,6 @@
                 <version>${slf4j.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-beans</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-jdbc</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-test</artifactId>
-                <version>${spring.version}</version>
-            </dependency>
 
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
@@ -154,6 +135,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <distributionManagement>
+        <repository>
+            <id>releases</id>
+            <name>maven-releases</name>
+            <url>http://192.168.11.33:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://192.168.11.33:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <build>
         <finalName>leaf</finalName>
         <plugins>
