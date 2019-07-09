@@ -14,4 +14,4 @@ spring:
 logging:
   level:
     root: info
-    com.sankuai.inf.leaf.segment.dao: debug
+    com.mmk.reservation.mapper: debug

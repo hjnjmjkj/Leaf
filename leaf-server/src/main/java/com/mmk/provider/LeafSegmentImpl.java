@@ -1,6 +1,6 @@
 package com.mmk.provider;
 
-import com.mmk.spi.LeafSegment;
+import com.mmk.spi.IDService;
 import com.sankuai.inf.leaf.server.SegmentService;
 import org.apache.dubbo.config.annotation.Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @date 2019/7/8
  */
 @Service
-public class LeafSegmentImpl extends LeafImpl implements LeafSegment {
+public class LeafSegmentImpl extends LeafImpl implements IDService {
     @Autowired
     SegmentService segmentService;
     @Override
