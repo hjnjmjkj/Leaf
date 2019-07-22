@@ -16,7 +16,7 @@
     <properties>
         <spring-boot-dependencies.version>2.1.5.RELEASE</spring-boot-dependencies.version>
         <dubbo.group>org.apache.dubbo</dubbo.group>
-        <dubbo.version>2.7.2</dubbo.version>
+        <dubbo.version>2.7.3</dubbo.version>
     </properties>
 
     <dependencies>
@@ -96,7 +96,7 @@
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
-            <version>1.0.0</version>
+            <version>1.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.boot</groupId>
@@ -107,6 +107,11 @@
             <groupId>com.alibaba.spring</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>23.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

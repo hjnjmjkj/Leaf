@@ -1,0 +1,15 @@
+dubbo:
+  application:
+    name: leaf-service
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: nacos://localhost:8848
+  scan:
+    basePackages: com
+nacos:
+  config:
+    server-addr: localhost:8848
+server:
+  port: 18081
