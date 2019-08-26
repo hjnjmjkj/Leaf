@@ -61,7 +61,7 @@
         <dependency>
             <groupId>${dubbo.group}</groupId>
             <artifactId>dubbo-spring-boot-starter</artifactId>
-            <version>2.7.1</version>
+            <version>${dubbo.version}</version>
         </dependency>
         <!--<dependency>
             <groupId>com.alibaba.spring.boot</groupId>
@@ -89,11 +89,6 @@
             <version>${dubbo.version}</version>
         </dependency>
         <dependency>
-            <groupId>${dubbo.group}</groupId>
-            <artifactId>dubbo-config-spring</artifactId>
-            <version>${dubbo.version}</version>
-        </dependency>
-        <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
             <version>1.1.1</version>
@@ -101,7 +96,7 @@
         <dependency>
             <groupId>com.alibaba.boot</groupId>
             <artifactId>nacos-config-spring-boot-starter</artifactId>
-            <version>0.2.1</version>
+            <version>0.2.3</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba.spring</groupId>
